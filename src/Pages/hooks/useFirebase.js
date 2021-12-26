@@ -41,7 +41,7 @@ const useFirebase = () => {
         setUser(newUser);
 
         // // save user to the database
-        // saveUser(email, name, "POST");
+        saveUser(email, name, "POST");
 
         // send name to firebase after creation
         updateProfile(auth.currentUser, {
@@ -79,7 +79,7 @@ const useFirebase = () => {
     signInWithPopup(auth, googleProvider)
       .then((result) => {
         const user = result.user;
-        // saveUser(user.email, user.displayName, "PUT");
+        saveUser(user.email, user.displayName, "PUT");
         setAuthError("");
         const destination = location?.state?.from || "/";
         history.replace(destination);
@@ -95,9 +95,6 @@ const useFirebase = () => {
     const unsubscribed = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
-        // getIdToken(user).then((idToken) => {
-        //   setToken(idToken);
-        // });
       } else {
         setUser({});
       }
@@ -118,6 +115,26 @@ const useFirebase = () => {
       })
       .finally(() => setIsLoading(false));
   };
+
+  // saved user function
+  const saveUser = (email, displayName, method) => {
+    const user = { email, displayName };
+    fetch("http://localhost:5000/users", {
+      method: method,
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(user),
+    }).then();
+  };
+
+  // admin data load
+  useEffect(() => {
+    fetch(`http://localhost:5000/users/${user.email}`)
+      .then((res) => res.json())
+
+      .then((data) => setAdmin(data.admin));
+  }, [user.email]);
 
   return {
     registerUser,

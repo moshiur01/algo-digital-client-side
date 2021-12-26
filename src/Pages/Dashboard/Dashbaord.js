@@ -3,7 +3,8 @@ import { Container, Nav, Navbar, Offcanvas } from "react-bootstrap";
 import { Route, Switch, useRouteMatch } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import "./Dashboard.css";
-import AddReview from "./MyOrders/AddReview/AddReview";
+import MakeAdmin from "./MakeAdmin/MakeAdmin";
+// import AddReview from "./MyOrders/AddReview/AddReview";
 import MyOrders from "./MyOrders/MyOrders";
 
 const Dashboard = () => {
@@ -79,12 +80,13 @@ const Dashboard = () => {
           {/* <MakePayment></MakePayment> */}
         </Route>
         <Route exact path={`${path}/addReview`}>
-          <AddReview></AddReview>
+          {/* <AddReview></AddReview> */}
+        </Route>
+        <Route exact path={`${path}/makeAdmin`}>
+          <MakeAdmin></MakeAdmin>
         </Route>
 
-        {/* <AdminRoute exact path={`${path}/makeAdmin`}>
-            <MakeAdmin></MakeAdmin>
-          </AdminRoute>
+        {/* 
 
           <AdminRoute exact path={`${path}/manageOrders`}>
             <ManageOrders></ManageOrders>
