@@ -1,25 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Button, Container, Table } from "react-bootstrap";
-import useAuth from "../../hooks/useAuth";
-const MyOrders = () => {
-  const { user } = useAuth();
-  const [orders, setOrders] = useState([]);
-  const [myOrders, setMyOrders] = useState([]);
+
+const ManageOrder = () => {
+  const [orders, setOrder] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:5000/orders")
       .then((res) => res.json())
-      .then((data) => setOrders(data));
+      .then((data) => setOrder(data));
   }, []);
+  console.log(orders);
 
-  // filter orders by user email
-  useEffect(() => {
-    const found = orders.filter((order) => order?.email === user.email);
-    setMyOrders(found);
-  }, [orders, user.email]);
-
-  //   handle delete order by user
-
+  // delete
   const handleDelete = (id) => {
     const url = `http://localhost:5000/orders/${id}`;
     fetch(url, {
@@ -27,18 +19,28 @@ const MyOrders = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        const confirm = window.confirm("DO you Want to Delete?");
+        const confirm = window.confirm("Do you Want to Delete?");
         if (confirm) {
           if (data.deletedCount > 0) {
             alert("order Deleted");
-            const remaining = myOrders.filter((order) => order._id !== id);
-            setMyOrders(remaining);
+            const remaining = orders.filter((order) => order._id !== id);
+            setOrder(remaining);
           }
         }
       });
   };
+
   // update status
-  const orderStatus = localStorage.getItem("status");
+
+  const handleConfirm = (id) => {
+    localStorage.setItem("status", id);
+    const confirm = window.confirm("Do you want to confirm?");
+    if (confirm) {
+      alert("Order Confirmed");
+      const remaining = orders.filter((order) => order._id !== id);
+      setOrder(remaining);
+    }
+  };
 
   return (
     <div>
@@ -55,11 +57,10 @@ const MyOrders = () => {
               <th>Service Name</th>
               <th>phone Number</th>
               <th>Action</th>
-              <th>Status</th>
             </tr>
           </thead>
           <tbody>
-            {myOrders.map((order) => (
+            {orders.map((order) => (
               <tr className="align-items-center" key={order._id}>
                 <td>{order?.name}</td>
                 <td>{order?.email}</td>
@@ -73,13 +74,13 @@ const MyOrders = () => {
                   >
                     Delete
                   </Button>
-                </td>
-                <td>
-                  {order._id === orderStatus ? (
-                    <span className="text-success">Service Delivered</span>
-                  ) : (
-                    <span className="text-info">Pending</span>
-                  )}
+                  <Button
+                    variant="success"
+                    className="ms-2"
+                    onClick={() => handleConfirm(order._id)}
+                  >
+                    Confirm
+                  </Button>
                 </td>
               </tr>
             ))}
@@ -90,4 +91,4 @@ const MyOrders = () => {
   );
 };
 
-export default MyOrders;
+export default ManageOrder;

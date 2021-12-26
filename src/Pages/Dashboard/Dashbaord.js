@@ -2,14 +2,17 @@ import React from "react";
 import { Container, Nav, Navbar, Offcanvas } from "react-bootstrap";
 import { Route, Switch, useRouteMatch } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import useAuth from "../hooks/useAuth";
 import "./Dashboard.css";
 import AdminRoute from "./MakeAdmin/adminRoute";
 import MakeAdmin from "./MakeAdmin/MakeAdmin";
+import ManageOrder from "./ManageOrders/ManageOrder";
 // import AddReview from "./MyOrders/AddReview/AddReview";
 import MyOrders from "./MyOrders/MyOrders";
 
 const Dashboard = () => {
   let { path, url } = useRouteMatch();
+  const { logout, admin } = useAuth();
   return (
     <>
       <Navbar
@@ -37,32 +40,45 @@ const Dashboard = () => {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link as={HashLink} to="/" className="">
-                  Home
-                </Nav.Link>
-                <Nav.Link as={HashLink} to={`${url}`} className="">
-                  My Orders
-                </Nav.Link>
+                {!admin ? (
+                  <>
+                    <Nav.Link as={HashLink} to="/" className="">
+                      Home
+                    </Nav.Link>
+                    <Nav.Link as={HashLink} to={`${url}`} className="">
+                      My Orders
+                    </Nav.Link>
 
-                <Nav.Link as={HashLink} to={`${url}/addReview`} className="">
-                  Add Review
-                </Nav.Link>
-                {/* admin */}
-                <Nav.Link as={HashLink} to={`${url}/makeAdmin`} className="">
-                  Make Admin
-                </Nav.Link>
-                <Nav.Link as={HashLink} to="/home" className="">
-                  Manage Orders
-                </Nav.Link>
-                <Nav.Link as={HashLink} to="/home" className="">
-                  Manage Services
-                </Nav.Link>
-                <Nav.Link as={HashLink} to="/home" className="">
-                  Add Services
-                </Nav.Link>
-                <Nav.Link as={HashLink} to="/home" className="">
-                  Manage Reviews
-                </Nav.Link>
+                    <Nav.Link
+                      as={HashLink}
+                      to={`${url}/addReview`}
+                      className=""
+                    >
+                      Add Review
+                    </Nav.Link>
+                  </>
+                ) : (
+                  <>
+                    <Nav.Link as={HashLink} to="/" className="">
+                      Home
+                    </Nav.Link>
+                    <Nav.Link as={HashLink} to={`${url}/makeAdmin`}>
+                      Make Admin
+                    </Nav.Link>
+                    <Nav.Link as={HashLink} to={`${url}/manageOrders`}>
+                      Manage Orders
+                    </Nav.Link>
+                    <Nav.Link as={HashLink} to="/home">
+                      Manage Services
+                    </Nav.Link>
+                    <Nav.Link as={HashLink} to="/home">
+                      Add Services
+                    </Nav.Link>
+                    <Nav.Link as={HashLink} to="/home">
+                      Manage Reviews
+                    </Nav.Link>
+                  </>
+                )}
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>
@@ -86,12 +102,13 @@ const Dashboard = () => {
         <AdminRoute exact path={`${path}/makeAdmin`}>
           <MakeAdmin></MakeAdmin>
         </AdminRoute>
+        <AdminRoute exact path={`${path}/manageOrders`}>
+          <ManageOrder></ManageOrder>
+        </AdminRoute>
 
         {/* 
 
-          <AdminRoute exact path={`${path}/manageOrders`}>
-            <ManageOrders></ManageOrders>
-          </AdminRoute>
+          
           <AdminRoute exact path={`${path}/manageCars`}>
             <ManageCars></ManageCars>
           </AdminRoute>
