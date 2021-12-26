@@ -3,6 +3,7 @@ import { Container, Nav, Navbar, Offcanvas } from "react-bootstrap";
 import { Route, Switch, useRouteMatch } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import useAuth from "../hooks/useAuth";
+import AddServices from "./AddServices/AddServices";
 import "./Dashboard.css";
 import AdminRoute from "./MakeAdmin/adminRoute";
 import MakeAdmin from "./MakeAdmin/MakeAdmin";
@@ -73,7 +74,7 @@ const Dashboard = () => {
                     <Nav.Link as={HashLink} to={`${url}/manageServices`}>
                       Manage Services
                     </Nav.Link>
-                    <Nav.Link as={HashLink} to="/home">
+                    <Nav.Link as={HashLink} to={`${url}/addServices`}>
                       Add Services
                     </Nav.Link>
                     <Nav.Link as={HashLink} to="/home">
@@ -112,14 +113,9 @@ const Dashboard = () => {
         <AdminRoute exact path={`${path}/manageServices`}>
           <ManageServices></ManageServices>
         </AdminRoute>
-
-        {/* 
-
-          
-          
-          <AdminRoute exact path={`${path}/addCars`}>
-            <AddCars></AddCars>
-          </AdminRoute> */}
+        <AdminRoute exact path={`${path}/addServices`}>
+          <AddServices></AddServices>
+        </AdminRoute>
       </Switch>
     </>
   );

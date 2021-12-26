@@ -21,7 +21,7 @@ const ManageServices = () => {
         const confirm = window.confirm("Do you Want to Delete?");
         if (confirm) {
           if (data.deletedCount > 0) {
-            alert("Car Deleted");
+            alert("Service  Deleted");
             const remaining = services.filter((car) => car._id !== id);
             setServices(remaining);
           }
@@ -30,7 +30,8 @@ const ManageServices = () => {
   };
 
   return (
-    <Container className="mt-5">
+    <Container className="mt-5 top-service-left-heading ">
+      <h1 className="text-center my-5">Manage services</h1>
       <Table responsive="sm" className="text-center">
         <thead>
           <tr>
@@ -42,7 +43,7 @@ const ManageServices = () => {
         </thead>
         <tbody>
           {services.map((service) => (
-            <tr key={service?.key}>
+            <tr key={service?._id}>
               <td>
                 <img
                   src={service?.img}

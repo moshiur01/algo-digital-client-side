@@ -16,7 +16,7 @@ const Team = () => {
       .then((res) => res.json())
       .then((data) => setTeam(data));
   }, []);
-  console.log(team);
+  // console.log(team);
   return (
     <div
       className="mb-5 team-section "
