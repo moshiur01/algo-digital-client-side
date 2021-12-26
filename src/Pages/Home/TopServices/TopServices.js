@@ -34,7 +34,7 @@ const TopServices = () => {
                 pleasure of the moment
               </p>
               <Link to="/services">
-                <button class="top-service-button">
+                <button className="top-service-button">
                   <span>More Services </span>
                 </button>
               </Link>
@@ -86,7 +86,7 @@ const TopServices = () => {
                   <Link to="/services/seo" className="link-text-dec">
                     <div className="common shadow">
                       <div className="icon">
-                        <i class="fab fa-adversal"></i>
+                        <i className="fab fa-adversal"></i>
                       </div>
                       <div className="text ">
                         <h4>Google Ads</h4>
@@ -104,7 +104,7 @@ const TopServices = () => {
                   <Link to="/services/seo" className="link-text-dec">
                     <div className="common shadow">
                       <div className="icon">
-                        <i class="fas fa-users"></i>
+                        <i className="fas fa-users"></i>
                       </div>
                       <div className="text ">
                         <h4>Social Media Management</h4>

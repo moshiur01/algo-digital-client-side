@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button, Container, Form } from "react-bootstrap";
 
 const MakeAdmin = () => {
   const [email, setEmail] = useState("");
@@ -10,7 +11,7 @@ const MakeAdmin = () => {
     const confirm = window.confirm(`Do you want to Make ${email} as a Admin`);
     if (confirm) {
       const user = { email };
-      fetch("https://cryptic-fortress-14110.herokuapp.com/users/admin", {
+      fetch("http://localhost:5000/users/admin", {
         method: "PUT",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(user),
@@ -27,7 +28,27 @@ const MakeAdmin = () => {
         });
     }
   };
-  return <div>make me Admin</div>;
+  return (
+    <Container className="top-service-left-heading mt-5">
+      <div>
+        <h1>Make Admin</h1>
+        <Form id="admin-form" onSubmit={handleAdminSubmit}>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Email address</Form.Label>
+            <Form.Control
+              className="w-50"
+              type="email"
+              placeholder="Enter email"
+              onBlur={handleOnBlur}
+            />
+          </Form.Group>
+          <Button variant="primary" type="submit">
+            Add Admin
+          </Button>
+        </Form>
+      </div>
+    </Container>
+  );
 };
 
 export default MakeAdmin;

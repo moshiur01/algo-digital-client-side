@@ -43,7 +43,7 @@ const Services = () => {
               <h1 className="mb-5">{service.name}</h1>
               <p>{service.des}</p>
               <Link to={`services/${service._id}`}>
-                <button class="top-service-button">
+                <button className="top-service-button">
                   <span>Learn More </span>
                 </button>
               </Link>

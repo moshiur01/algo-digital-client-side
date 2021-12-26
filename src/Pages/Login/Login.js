@@ -57,11 +57,11 @@ const Login = () => {
             </Form.Group>
             {isLoading && <Spinner animation="grow" />}
 
-            <button class="signUp-button">
+            <button className="signUp-button">
               <span>Login</span>
             </button>
 
-            <button class="signUp-button" onClick={handleGoogleSignIn}>
+            <button className="signUp-button" onClick={handleGoogleSignIn}>
               <span>Google </span>
             </button>
             {authError && <Alert variant="danger">{authError}</Alert>}

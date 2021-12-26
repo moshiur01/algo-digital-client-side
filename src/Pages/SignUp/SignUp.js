@@ -102,11 +102,11 @@ const SignUp = () => {
             </>
 
             <>
-              <button class="signUp-button">
+              <button className="signUp-button">
                 <span>SignUp </span>
               </button>
 
-              <button class="signUp-button" onClick={handleGoogleSignIn}>
+              <button className="signUp-button" onClick={handleGoogleSignIn}>
                 <span>Google </span>
               </button>
             </>

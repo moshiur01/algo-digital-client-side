@@ -29,7 +29,7 @@ const Banner = () => {
               DIGITAL
             </p>
             <Link to="/services">
-              <button class="button">
+              <button className="button">
                 <span>Services </span>
               </button>
             </Link>
