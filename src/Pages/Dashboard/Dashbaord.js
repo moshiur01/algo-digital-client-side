@@ -7,8 +7,10 @@ import "./Dashboard.css";
 import AdminRoute from "./MakeAdmin/adminRoute";
 import MakeAdmin from "./MakeAdmin/MakeAdmin";
 import ManageOrder from "./ManageOrders/ManageOrder";
+import ManageServices from "./ManageServices/ManageServices";
 // import AddReview from "./MyOrders/AddReview/AddReview";
 import MyOrders from "./MyOrders/MyOrders";
+import WellCome from "./WellCome/WellCome";
 
 const Dashboard = () => {
   let { path, url } = useRouteMatch();
@@ -68,7 +70,7 @@ const Dashboard = () => {
                     <Nav.Link as={HashLink} to={`${url}/manageOrders`}>
                       Manage Orders
                     </Nav.Link>
-                    <Nav.Link as={HashLink} to="/home">
+                    <Nav.Link as={HashLink} to={`${url}/manageServices`}>
                       Manage Services
                     </Nav.Link>
                     <Nav.Link as={HashLink} to="/home">
@@ -87,7 +89,7 @@ const Dashboard = () => {
 
       <Switch>
         <Route exact path={path}>
-          <MyOrders></MyOrders>
+          <WellCome></WellCome>
         </Route>
         <Route exact path={`${path}/myOrders`}>
           <MyOrders></MyOrders>
@@ -99,19 +101,22 @@ const Dashboard = () => {
         <Route exact path={`${path}/addReview`}>
           {/* <AddReview></AddReview> */}
         </Route>
+
         <AdminRoute exact path={`${path}/makeAdmin`}>
           <MakeAdmin></MakeAdmin>
         </AdminRoute>
+
         <AdminRoute exact path={`${path}/manageOrders`}>
           <ManageOrder></ManageOrder>
+        </AdminRoute>
+        <AdminRoute exact path={`${path}/manageServices`}>
+          <ManageServices></ManageServices>
         </AdminRoute>
 
         {/* 
 
           
-          <AdminRoute exact path={`${path}/manageCars`}>
-            <ManageCars></ManageCars>
-          </AdminRoute>
+          
           <AdminRoute exact path={`${path}/addCars`}>
             <AddCars></AddCars>
           </AdminRoute> */}
