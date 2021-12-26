@@ -1,0 +1,26 @@
+.service-banner {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  text-align: center;
+  background-image: url("./img/banner-bg.jpg");
+}
+
+.service-banner h1 {
+  font-size: 3.75rem;
+  color: #002249;
+  font-weight: 700;
+}
+.service-banner p {
+  font-size: 1.25rem;
+  color: #377690;
+  font-weight: 700;
+}
+
+.services-list h1 {
+  color: #002249;
+  font-weight: 700;
+}
+
+.services-list p {
+  color: #377690;
+}

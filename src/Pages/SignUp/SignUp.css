@@ -1,0 +1,107 @@
+.signUp-div {
+  background-image: url(../Home/Banner/img/banner-bg.jpg);
+  padding: 8.8rem 0rem;
+}
+.signUp-form-container {
+  width: 25%;
+}
+.signUp-heading {
+  color: #002249;
+  font-weight: 700;
+}
+/* signUp-btn
+ */
+
+.signUp-button {
+  border-radius: 10px;
+  background-color: #214d72;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 1rem;
+  padding: 6px;
+  width: 120px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.signUp-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.signUp-button span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.signUp-button:hover span {
+  padding-right: 25px;
+}
+
+.signUp-button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+/* responsive for mobile  */
+@media screen and (max-width: 400px) {
+  .signUp-div {
+    background-image: url(../Home/Banner/img/banner-bg.jpg);
+    padding: 5rem 0rem;
+    height: 45rem;
+  }
+
+  .signUp-form-container {
+    width: 100%;
+  }
+
+  /* signUp-btn
+ */
+
+  .signUp-button {
+    border-radius: 10px;
+    background-color: #214d72;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    font-size: 1rem;
+    padding: 7px;
+    width: 100px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+
+  .signUp-button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+
+  .signUp-button span:after {
+    content: "\00bb";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+
+  .signUp-button:hover span {
+    padding-right: 25px;
+  }
+
+  .signUp-button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+}

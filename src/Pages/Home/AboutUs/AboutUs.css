@@ -1,0 +1,21 @@
+.about-me-container-div {
+  margin-top: 7rem;
+}
+
+.about-me-num span {
+  color: #002249;
+  font-weight: 700;
+}
+.about-company {
+  color: #002249;
+  font-weight: 700;
+  font-size: 1.4rem;
+  border-left: 0.3rem solid #002249;
+}
+.we-re-about-me {
+  color: #2c4e6c;
+}
+
+.about-me-p {
+  color: #377690;
+}

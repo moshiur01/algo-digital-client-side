@@ -1,0 +1,24 @@
+.login-div {
+  background-image: url(../Home/Banner/img/banner-bg.jpg);
+  padding: 18rem 0rem;
+}
+.login-form-container {
+  width: 25%;
+}
+.login-heading {
+  color: #002249;
+  font-weight: 700;
+}
+
+/* responsive for mobile  */
+@media screen and (max-width: 400px) {
+  .login-div {
+    background-image: url(../Home/Banner/img/banner-bg.jpg);
+    padding: 10rem 0rem;
+    height: 45rem;
+  }
+
+  .login-form-container {
+    width: 100%;
+  }
+}

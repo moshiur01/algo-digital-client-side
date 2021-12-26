@@ -1,0 +1,96 @@
+.team-section {
+  margin-top: 4rem;
+}
+
+.our-team-short-caption {
+  font-size: 1.5rem;
+  color: #377690;
+}
+
+.team-item figure {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+}
+.team-item figure img {
+  border: 5px solid #093b74;
+  border-radius: 20px;
+}
+.team-item figure figcaption {
+  border-radius: 20px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  margin-left: 2.34rem;
+  background: #377591d0;
+  opacity: 0;
+  width: 75%;
+  -webkit-transition: opacity 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: opacity 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.team-item figure figcaption .details {
+  position: absolute;
+  top: 40%;
+}
+.team-item figure figcaption .content-white {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #fff;
+  margin: 5px auto;
+  line-height: 18px;
+  width: 100%;
+  -webkit-transform: translateY(-50px);
+  transform: translateY(-50px);
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.team-item figure:hover figcaption {
+  opacity: 1;
+}
+/* .team-item figure:hover .orange-line {
+  width: 62px;
+} */
+.team-item figure:hover figcaption .content-white {
+  -webkit-transform: translateY(0px);
+  transform: translateY(0px);
+  margin-left: 1rem;
+}
+.team-item figure:hover .social a {
+  -webkit-transform: translateY(0px);
+  transform: translateY(0px);
+}
+.team-item .social {
+  text-align: center;
+  margin-top: 15px;
+}
+.team-item .social .facebook,
+.team-item .social .twitter,
+.team-item .social .google-plus {
+  font-size: 20px;
+  line-height: normal;
+  outline: none;
+  border-radius: 50%;
+  color: #fff;
+  width: 42px;
+  height: 42px;
+  line-height: 42px;
+  text-align: center;
+  display: inline-block;
+  -webkit-transform: translateY(50px);
+  transform: translateY(50px);
+  margin-right: 5px;
+}
+.team-item .social .facebook {
+  -webkit-transition: all 400ms ease;
+  transition: all 400ms ease;
+}
+.team-item .social .twitter {
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+.team-item .social .google-plus {
+  -webkit-transition: all 600ms ease;
+  transition: all 600ms ease;
+}

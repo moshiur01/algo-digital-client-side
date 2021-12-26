@@ -1,0 +1,106 @@
+.top-service-div {
+  margin-top: 7rem;
+}
+
+.top-service-left-heading h1 {
+  font-size: 3.5rem;
+  color: #214d72;
+}
+.top-service-left-heading p {
+  font-size: 1.28rem;
+  color: #121b12;
+}
+
+.top-services-heading {
+  color: #002249;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+/* top-services-btn
+ */
+
+.top-service-button {
+  border-radius: 10px;
+  background-color: #214d72;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 7px;
+  width: 210px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.top-service-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.top-service-button span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.top-service-button:hover span {
+  padding-right: 25px;
+}
+
+.top-service-button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.link-text-dec {
+  text-decoration: none;
+}
+
+.common {
+  background: #fff;
+  padding: 24px;
+  height: 20rem;
+  margin-bottom: 30px;
+  transition: 0.2s;
+  text-align: center;
+  border-radius: 20px;
+  color: #121b12;
+}
+
+.common:hover {
+  background: #214d72;
+  color: #fff;
+}
+
+.common:hover .icon {
+  color: #fff;
+}
+
+.common .icon {
+  font-size: 3rem;
+  text-align: center;
+  color: #214d72;
+  margin-bottom: 20px;
+}
+
+.common .text h4:hover {
+  color: #fff !important;
+}
+.common:hover h4,
+.common:hover p {
+  color: #fff;
+}
+
+.common .text h4 {
+  margin: 0 auto;
+  margin-bottom: 14px;
+  font-weight: 600;
+  font-size: 20px;
+}
