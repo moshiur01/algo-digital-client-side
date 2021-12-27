@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import { Alert, Container, Form, Spinner } from "react-bootstrap";
+import { Alert, Container, Form } from "react-bootstrap";
 import { Link, useLocation, useHistory } from "react-router-dom";
 import Navigate from "../Shared/Navigate/Navigate";
 import "./Login.css";
 import useAuth from "../hooks/useAuth";
+
+import loadingImage from "../Home/img/loading.gif";
+
 const Login = () => {
   const { signInWithGoogle, loginUser, isLoading, authError } = useAuth();
   const [loginData, setLoginData] = useState({});
@@ -55,7 +58,9 @@ const Login = () => {
                 required
               />
             </Form.Group>
-            {isLoading && <Spinner animation="grow" />}
+            {isLoading && (
+              <img src={loadingImage} className="image-fluid" alt="" />
+            )}
 
             <button className="signUp-button">
               <span>Login</span>

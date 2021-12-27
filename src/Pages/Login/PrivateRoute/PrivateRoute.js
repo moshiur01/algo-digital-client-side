@@ -1,14 +1,15 @@
 import React from "react";
 import useAuth from "../../hooks/useAuth";
-import { Container, Spinner } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { Redirect, Route } from "react-router-dom";
+import loadingImage from "../../Home/img/loading.gif";
 
 const PrivateRoute = ({ children, ...rest }) => {
   const { user, isLoading } = useAuth();
   if (isLoading) {
     return (
       <Container className="d-flex justify-content-center ">
-        <Spinner animation="grow" />
+        <img src={loadingImage} className="image-fluid" alt="" />
       </Container>
     );
   }

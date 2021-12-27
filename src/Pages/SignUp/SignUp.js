@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import { Alert, Container, Form, Spinner } from "react-bootstrap";
+import { Alert, Container, Form } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import useAuth from "../hooks/useAuth";
 import Navigate from "../Shared/Navigate/Navigate";
 import "./SignUp.css";
+
+import loadingImage from "../Home/img/loading.gif";
 
 const SignUp = () => {
   const [signUpData, setSignUpData] = useState({});
@@ -92,7 +94,9 @@ const SignUp = () => {
               />
             </Form.Group>
             <>
-              {isLoading && <Spinner animation="grow" />}
+              {isLoading && (
+                <img src={loadingImage} className="image-fluid" alt="" />
+              )}
               {user?.email && (
                 <Alert variant="info rounded">User Created successfully</Alert>
               )}
