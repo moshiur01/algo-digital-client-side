@@ -17,20 +17,6 @@ const ServiceDetails = () => {
 
   const { user } = useAuth();
 
-  // hook form
-  const { register, handleSubmit, reset } = useForm();
-  const onSubmit = (data) => {
-    axios
-      .post("https://fathomless-falls-37027.herokuapp.com/orders", data)
-      .then((res) => {
-        if (res.data.insertedId) {
-          alert("Thank You for Choosing ALGO DIGITAL");
-          reset();
-        }
-      });
-    console.log(data);
-  };
-
   let { id } = useParams();
 
   const [service, setService] = useState([]);
@@ -44,6 +30,22 @@ const ServiceDetails = () => {
         setServiceDetails(data.des1);
       });
   }, [id]);
+
+  // hook form
+  const { register, handleSubmit, reset } = useForm();
+  const onSubmit = (data) => {
+    let ser = { serviceName: `${service?.name}` };
+    let final = { ...data, ...ser };
+
+    axios
+      .post("https://fathomless-falls-37027.herokuapp.com/orders", final)
+      .then((res) => {
+        if (res.data.insertedId) {
+          alert("Thank You for Choosing ALGO DIGITAL");
+          reset();
+        }
+      });
+  };
 
   return (
     <div>
@@ -59,7 +61,7 @@ const ServiceDetails = () => {
         {serviceDetails.map((singleService) => (
           <>
             <Row
-              key={service?._id}
+              key={singleService?._id}
               className="gy-5 my-5"
               data-aos="fade-up"
               data-aos-anchor-placement="top-bottom"
@@ -96,7 +98,7 @@ const ServiceDetails = () => {
                         className="form-control m-2"
                         id="name"
                         placeholder="Name"
-                        value={user.displayName}
+                        value={user?.displayName}
                         required="required"
                         {...register("name")}
                       />
@@ -114,7 +116,7 @@ const ServiceDetails = () => {
                         id="email"
                         placeholder="Email Address"
                         required="required"
-                        value={user.email}
+                        value={user?.email}
                         {...register("email")}
                       />
                     </div>
@@ -143,12 +145,13 @@ const ServiceDetails = () => {
                       </label>
                       <input
                         type="text"
-                        name="name"
+                        name="serviceName"
                         className="form-control m-2"
                         id="name"
                         placeholder="Name"
                         required="required"
-                        {...register("serviceName")}
+                        value={service?.name}
+                        // {...register("serviceName")}
                       />
                     </div>
                   </div>
