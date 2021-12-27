@@ -59,6 +59,10 @@ const Dashboard = () => {
                     >
                       Add Review
                     </Nav.Link>
+
+                    <Navbar.Text onClick={logout}>
+                      <span style={{ cursor: "pointer " }}>LogOut</span>
+                    </Navbar.Text>
                   </>
                 ) : (
                   <>
@@ -80,6 +84,10 @@ const Dashboard = () => {
                     <Nav.Link as={HashLink} to="/home">
                       Manage Reviews
                     </Nav.Link>
+
+                    <Navbar.Text onClick={logout}>
+                      <span style={{ cursor: "pointer " }}>LogOut</span>
+                    </Navbar.Text>
                   </>
                 )}
               </Nav>

@@ -1,0 +1,28 @@
+.swiper-container {
+  width: 480px;
+}
+.rating-color {
+  color: gold;
+}
+
+.review-img {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+}
+@media screen and (min-width: 640px) {
+  .swiper-container {
+    width: 640px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .swiper-container {
+    width: 768px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .swiper-container {
+    width: 400px;
+  }
+}

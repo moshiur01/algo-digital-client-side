@@ -47,7 +47,7 @@ const TopServices = () => {
               </h1>
               <Row className="">
                 <Col xm={12} sm={12} md={6} lg={6}>
-                  <Link to="/services/seo" className="link-text-dec">
+                  <Link to="/services" className="link-text-dec">
                     <div className="common shadow">
                       <div className="icon">
                         <FontAwesomeIcon icon={faSearch} />
@@ -65,7 +65,7 @@ const TopServices = () => {
                   </Link>
                 </Col>
                 <Col xm={12} sm={12} md={6} lg={6}>
-                  <Link to="/services/seo" className="link-text-dec">
+                  <Link to="/services" className="link-text-dec">
                     <div className="common shadow">
                       <div className="icon">
                         <FontAwesomeIcon icon={faGlobe} />
@@ -83,7 +83,7 @@ const TopServices = () => {
                   </Link>
                 </Col>
                 <Col xm={12} sm={12} md={6} lg={6}>
-                  <Link to="/services/seo" className="link-text-dec">
+                  <Link to="/services" className="link-text-dec">
                     <div className="common shadow">
                       <div className="icon">
                         <i className="fab fa-adversal"></i>
@@ -101,7 +101,7 @@ const TopServices = () => {
                   </Link>
                 </Col>
                 <Col xm={12} sm={12} md={6} lg={6}>
-                  <Link to="/services/seo" className="link-text-dec">
+                  <Link to="/services" className="link-text-dec">
                     <div className="common shadow">
                       <div className="icon">
                         <i className="fas fa-users"></i>
