@@ -9,6 +9,7 @@ import "./Dashboard.css";
 import AdminRoute from "./MakeAdmin/adminRoute";
 import MakeAdmin from "./MakeAdmin/MakeAdmin";
 import ManageOrder from "./ManageOrders/ManageOrder";
+import ManageReview from "./ManageReview/ManageReview";
 import ManageServices from "./ManageServices/ManageServices";
 // import AddReview from "./MyOrders/AddReview/AddReview";
 import MyOrders from "./MyOrders/MyOrders";
@@ -82,7 +83,7 @@ const Dashboard = () => {
                     <Nav.Link as={HashLink} to={`${url}/addServices`}>
                       Add Services
                     </Nav.Link>
-                    <Nav.Link as={HashLink} to="/home">
+                    <Nav.Link as={HashLink} to={`${url}/manageReviews`}>
                       Manage Reviews
                     </Nav.Link>
 
@@ -124,6 +125,9 @@ const Dashboard = () => {
         </AdminRoute>
         <AdminRoute exact path={`${path}/addServices`}>
           <AddServices></AddServices>
+        </AdminRoute>
+        <AdminRoute exact path={`${path}/manageReviews`}>
+          <ManageReview></ManageReview>
         </AdminRoute>
       </Switch>
     </>
