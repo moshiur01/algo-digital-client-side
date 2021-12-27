@@ -33,7 +33,7 @@ const Navigate = () => {
             <Nav.Link as={HashLink} to="/home#team" className="">
               Our Team
             </Nav.Link>
-            <Nav.Link href="#pricing" className="">
+            <Nav.Link href="/home#reviews" className="">
               Reviews
             </Nav.Link>
             <Nav.Link href="/home#contactUs" className="">

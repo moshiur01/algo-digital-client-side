@@ -19,7 +19,9 @@ const Home = () => {
       <div id="team">
         <Team></Team>
       </div>
-      <Reviews></Reviews>
+      <div id="reviews">
+        <Reviews></Reviews>
+      </div>
 
       <div id="contactUs">
         <ContactUs></ContactUs>

@@ -9,10 +9,14 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import Rating from "react-rating";
-
-// Swiper.use={[Navigation, Pagination, Scrollbar, A11y]}
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Reviews = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
     fetch("http://localhost:5000/reviews")
@@ -21,7 +25,13 @@ const Reviews = () => {
   }, []);
 
   return (
-    <div className="mx-auto">
+    <div
+      className="mx-auto "
+      data-aos="fade-right"
+      data-aos-offset="300"
+      data-aos-easing="ease-in-sine"
+    >
+      <h1 className="we-re-about-me user-reviews">User reviews</h1>
       <Container className="text-center">
         <Swiper
           breakpoints={{

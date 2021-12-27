@@ -14,7 +14,7 @@ const AddServices = () => {
       }
     });
 
-    console.log(data);
+    // console.log(data);
   };
 
   return (
