@@ -6,14 +6,14 @@ const ManageReview = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/reviews")
+    fetch("https://fathomless-falls-37027.herokuapp.com/reviews")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, [reviews]);
 
   // delete
   const handleDelete = (id) => {
-    const url = `http://localhost:5000/reviews/${id}`;
+    const url = `https://fathomless-falls-37027.herokuapp.com/reviews/${id}`;
     fetch(url, {
       method: "DELETE",
     })

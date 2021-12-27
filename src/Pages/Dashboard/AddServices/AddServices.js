@@ -7,12 +7,14 @@ const AddServices = () => {
   const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = (data) => {
-    axios.post("http://localhost:5000/services", data).then((res) => {
-      if (res.data.insertedId) {
-        alert("Successfully Added A New Service");
-        reset();
-      }
-    });
+    axios
+      .post("https://fathomless-falls-37027.herokuapp.com/services", data)
+      .then((res) => {
+        if (res.data.insertedId) {
+          alert("Successfully Added A New Service");
+          reset();
+        }
+      });
 
     // console.log(data);
   };

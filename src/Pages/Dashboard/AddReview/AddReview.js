@@ -14,12 +14,14 @@ const AddReview = () => {
 
     let finalData = { ...data, ...image };
 
-    axios.post("http://localhost:5000/reviews", finalData).then((res) => {
-      if (res.data.insertedId) {
-        alert("Thank You for Your Valuable Review");
-        reset();
-      }
-    });
+    axios
+      .post("https://fathomless-falls-37027.herokuapp.com/reviews", finalData)
+      .then((res) => {
+        if (res.data.insertedId) {
+          alert("Thank You for Your Valuable Review");
+          reset();
+        }
+      });
 
     console.log(finalData);
   };

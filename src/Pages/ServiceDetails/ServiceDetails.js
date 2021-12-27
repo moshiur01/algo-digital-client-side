@@ -20,12 +20,14 @@ const ServiceDetails = () => {
   // hook form
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
-    axios.post("http://localhost:5000/orders", data).then((res) => {
-      if (res.data.insertedId) {
-        alert("Thank You for Choosing ALGO DIGITAL");
-        reset();
-      }
-    });
+    axios
+      .post("https://fathomless-falls-37027.herokuapp.com/orders", data)
+      .then((res) => {
+        if (res.data.insertedId) {
+          alert("Thank You for Choosing ALGO DIGITAL");
+          reset();
+        }
+      });
     console.log(data);
   };
 
@@ -35,7 +37,7 @@ const ServiceDetails = () => {
   const [serviceDetails, setServiceDetails] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/services/${id}`)
+    fetch(`https://fathomless-falls-37027.herokuapp.com/services/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setService(data);
@@ -80,11 +82,14 @@ const ServiceDetails = () => {
           </h1>
 
           <div className="place-order-form-div">
-            <Container>
+            <Container className="mt-4">
               <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="row">
                   <div className="col-md-6">
                     <div className="form-group">
+                      <label for="fname" className="ms-2">
+                        User Name
+                      </label>
                       <input
                         type="text"
                         name="name"
@@ -99,6 +104,9 @@ const ServiceDetails = () => {
                   </div>
                   <div className="col-md-6">
                     <div className="form-group in_email">
+                      <label for="fname" className="ms-2">
+                        User Email
+                      </label>
                       <input
                         type="email"
                         name="email"
@@ -114,6 +122,9 @@ const ServiceDetails = () => {
 
                   <div className="col-md-6">
                     <div className="form-group in_email">
+                      <label for="fname" className="ms-2">
+                        User Phone Number
+                      </label>
                       <input
                         type="text"
                         name="phone"
@@ -126,21 +137,26 @@ const ServiceDetails = () => {
                     </div>
                   </div>
                   <div className="col-md-6">
-                    <div className="form-group in_email">
+                    <div className="form-group">
+                      <label for="fname" className="ms-2">
+                        Service Name
+                      </label>
                       <input
                         type="text"
-                        name="serviceName"
-                        className="form-control  m-2"
-                        value={service?.name}
-                        placeholder="Service Name"
+                        name="name"
+                        className="form-control m-2"
+                        id="name"
+                        placeholder="Name"
                         required="required"
                         {...register("serviceName")}
                       />
                     </div>
                   </div>
-
                   <div className="col-md-12">
                     <div className="form-group in_message">
+                      <label for="fname" className="ms-2">
+                        User Address
+                      </label>
                       <textarea
                         name="address"
                         className="form-control ms-2 ser-details-text"
