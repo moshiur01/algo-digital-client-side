@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
+import "./makeAdmin.css";
 
 const MakeAdmin = () => {
   const [email, setEmail] = useState("");
@@ -29,7 +30,7 @@ const MakeAdmin = () => {
     }
   };
   return (
-    <Container className="top-service-left-heading mt-5">
+    <Container className="top-service-left-heading mt-5 make-admin-footer">
       <div>
         <h1>Make Admin</h1>
         <Form id="admin-form" onSubmit={handleAdminSubmit}>

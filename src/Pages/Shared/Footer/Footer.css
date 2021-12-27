@@ -1,0 +1,12 @@
+.footer-section {
+  height: 20rem;
+  background-color: #002249;
+}
+
+/* responsive for mobile  */
+@media screen and (max-width: 400px) {
+  .footer-section {
+    height: 50rem;
+    background-color: #002249;
+  }
+}

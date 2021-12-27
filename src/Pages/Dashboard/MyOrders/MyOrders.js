@@ -41,7 +41,7 @@ const MyOrders = () => {
   const orderStatus = localStorage.getItem("status");
 
   return (
-    <div>
+    <div className="make-admin-footer">
       <Container className="top-service-left-heading text-center">
         <h1>My Orders</h1>
       </Container>

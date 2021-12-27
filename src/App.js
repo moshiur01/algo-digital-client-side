@@ -10,6 +10,7 @@ import NotFound from "./Pages/NoFound/NotFound";
 import ServiceDetails from "./Pages/ServiceDetails/ServiceDetails";
 
 import Services from "./Pages/Services/Services";
+import Footer from "./Pages/Shared/Footer/Footer";
 import SignUp from "./Pages/SignUp/SignUp";
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
               <NotFound></NotFound>
             </Route>
           </Switch>
+          <Footer></Footer>
         </BrowserRouter>
       </AuthProvider>
     </div>

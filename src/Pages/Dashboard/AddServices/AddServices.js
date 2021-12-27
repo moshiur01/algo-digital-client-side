@@ -18,7 +18,7 @@ const AddServices = () => {
   };
 
   return (
-    <div className="top-service-left-heading">
+    <div className="top-service-left-heading make-admin-footer">
       <h1 className="text-center my-4">Add A New Service</h1>
       <Container>
         <form onSubmit={handleSubmit(onSubmit)}>

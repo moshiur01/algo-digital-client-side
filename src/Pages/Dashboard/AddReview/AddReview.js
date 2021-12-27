@@ -25,7 +25,7 @@ const AddReview = () => {
   };
 
   return (
-    <div className="top-service-left-heading">
+    <div className="top-service-left-heading make-admin-footer">
       <h1 className="text-center my-4">Add A Review</h1>
 
       <Container>

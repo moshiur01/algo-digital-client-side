@@ -43,9 +43,9 @@ const ManageOrder = () => {
   };
 
   return (
-    <div>
-      <Container className="top-service-left-heading text-center">
-        <h1>My Orders</h1>
+    <div className="make-admin-footer">
+      <Container className="top-service-left-heading text-center my-5 ">
+        <h1>Manage Orders</h1>
       </Container>
 
       <Container className="">

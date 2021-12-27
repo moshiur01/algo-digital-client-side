@@ -8,10 +8,11 @@ import AddServices from "./AddServices/AddServices";
 import "./Dashboard.css";
 import AdminRoute from "./MakeAdmin/adminRoute";
 import MakeAdmin from "./MakeAdmin/MakeAdmin";
+import MakePayment from "./MakePayment/MakePayment";
 import ManageOrder from "./ManageOrders/ManageOrder";
 import ManageReview from "./ManageReview/ManageReview";
 import ManageServices from "./ManageServices/ManageServices";
-// import AddReview from "./MyOrders/AddReview/AddReview";
+
 import MyOrders from "./MyOrders/MyOrders";
 import WellCome from "./WellCome/WellCome";
 
@@ -50,10 +51,17 @@ const Dashboard = () => {
                     <Nav.Link as={HashLink} to="/" className="">
                       Home
                     </Nav.Link>
-                    <Nav.Link as={HashLink} to={`${url}`} className="">
+                    <Nav.Link as={HashLink} to={`${url}/myOrders`} className="">
                       My Orders
                     </Nav.Link>
 
+                    <Nav.Link
+                      as={HashLink}
+                      to={`${url}/makePayment`}
+                      className=""
+                    >
+                      Make Payment
+                    </Nav.Link>
                     <Nav.Link
                       as={HashLink}
                       to={`${url}/addReview`}
@@ -107,7 +115,7 @@ const Dashboard = () => {
         </Route>
 
         <Route exact path={`${path}/makePayment`}>
-          {/* <MakePayment></MakePayment> */}
+          <MakePayment></MakePayment>
         </Route>
         <Route exact path={`${path}/addReview`}>
           <AddReview></AddReview>

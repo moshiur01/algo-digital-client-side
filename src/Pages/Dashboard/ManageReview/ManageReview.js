@@ -31,7 +31,7 @@ const ManageReview = () => {
   };
 
   return (
-    <div className="top-service-left-heading">
+    <div className="top-service-left-heading make-admin-footer">
       <h1 className="text-center my-4">Manage user's Reviews</h1>
       <Container>
         <Table responsive="sm" className="text-center">
