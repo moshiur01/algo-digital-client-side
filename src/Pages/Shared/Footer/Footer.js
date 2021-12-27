@@ -27,7 +27,7 @@ const Footer = () => {
             </p>
           </Col>
           <Col sm={12} md={4} lg={4} className="my-5">
-            Visit us
+            <h3>Visit us</h3>
             <br />
             <br />
             <i class="fas fa-home"></i> &nbsp; Kolabagan , Dhanmondi, Dhaka-1205
