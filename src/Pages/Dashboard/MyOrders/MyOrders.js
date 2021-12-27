@@ -67,12 +67,18 @@ const MyOrders = () => {
                 <td>{order?.phoneNumber}</td>
 
                 <td>
-                  <Button
-                    variant="danger"
-                    onClick={() => handleDelete(order._id)}
-                  >
-                    Delete
-                  </Button>
+                  {order._id === orderStatus ? (
+                    <Button variant="danger" disabled>
+                      Delete
+                    </Button>
+                  ) : (
+                    <Button
+                      variant="danger"
+                      onClick={() => handleDelete(order._id)}
+                    >
+                      Delete
+                    </Button>
+                  )}
                 </td>
                 <td>
                   {order._id === orderStatus ? (

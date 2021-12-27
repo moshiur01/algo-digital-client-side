@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Alert, Container, Form } from "react-bootstrap";
-import { useLocation } from "react-router-dom";
-import { useHistory } from "react-router-dom";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { useLocation, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import Navigate from "../Shared/Navigate/Navigate";
 import "./SignUp.css";
@@ -14,7 +13,7 @@ const SignUp = () => {
   const { user, registerUser, authError, isLoading, signInWithGoogle } =
     useAuth();
 
-  const history = useHistory();
+  const navigate = useNavigate();
   const location = useLocation();
 
   const handleOnBlur = (e) => {
@@ -35,13 +34,13 @@ const SignUp = () => {
       signUpData.email,
       signUpData.password,
       signUpData.name,
-      history
+      navigate
     );
     e.preventDefault();
   };
   //   google sign in
   const handleGoogleSignIn = () => {
-    signInWithGoogle(location, history);
+    signInWithGoogle(location, navigate);
   };
 
   return (

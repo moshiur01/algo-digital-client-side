@@ -1,23 +1,12 @@
 import React from "react";
 import { Container, Nav, Navbar, Offcanvas } from "react-bootstrap";
-import { Route, Switch, useRouteMatch } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import useAuth from "../hooks/useAuth";
-import AddReview from "./AddReview/AddReview";
-import AddServices from "./AddServices/AddServices";
-import "./Dashboard.css";
-import AdminRoute from "./MakeAdmin/adminRoute";
-import MakeAdmin from "./MakeAdmin/MakeAdmin";
-import MakePayment from "./MakePayment/MakePayment";
-import ManageOrder from "./ManageOrders/ManageOrder";
-import ManageReview from "./ManageReview/ManageReview";
-import ManageServices from "./ManageServices/ManageServices";
 
-import MyOrders from "./MyOrders/MyOrders";
-import WellCome from "./WellCome/WellCome";
+import "./Dashboard.css";
 
 const Dashboard = () => {
-  let { path, url } = useRouteMatch();
   const { logout, admin } = useAuth();
   return (
     <>
@@ -51,20 +40,24 @@ const Dashboard = () => {
                     <Nav.Link as={HashLink} to="/" className="">
                       Home
                     </Nav.Link>
-                    <Nav.Link as={HashLink} to={`${url}/myOrders`} className="">
+                    <Nav.Link
+                      as={HashLink}
+                      to="dashboard/myOrders"
+                      className=""
+                    >
                       My Orders
                     </Nav.Link>
 
                     <Nav.Link
                       as={HashLink}
-                      to={`${url}/makePayment`}
+                      to={`dashboard/makePayment`}
                       className=""
                     >
                       Make Payment
                     </Nav.Link>
                     <Nav.Link
                       as={HashLink}
-                      to={`${url}/addReview`}
+                      to={`dashboard/addReview`}
                       className=""
                     >
                       Add Review
@@ -79,19 +72,19 @@ const Dashboard = () => {
                     <Nav.Link as={HashLink} to="/" className="">
                       Home
                     </Nav.Link>
-                    <Nav.Link as={HashLink} to={`${url}/makeAdmin`}>
+                    <Nav.Link as={HashLink} to={`dashboard/makeAdmin`}>
                       Make Admin
                     </Nav.Link>
-                    <Nav.Link as={HashLink} to={`${url}/manageOrders`}>
+                    <Nav.Link as={HashLink} to={`dashboard/manageOrders`}>
                       Manage Orders
                     </Nav.Link>
-                    <Nav.Link as={HashLink} to={`${url}/manageServices`}>
+                    <Nav.Link as={HashLink} to={`dashboard/manageServices`}>
                       Manage Services
                     </Nav.Link>
-                    <Nav.Link as={HashLink} to={`${url}/addServices`}>
+                    <Nav.Link as={HashLink} to={`dashboard/addServices`}>
                       Add Services
                     </Nav.Link>
-                    <Nav.Link as={HashLink} to={`${url}/manageReviews`}>
+                    <Nav.Link as={HashLink} to={`dashboard/manageReviews`}>
                       Manage Reviews
                     </Nav.Link>
 
@@ -106,38 +99,7 @@ const Dashboard = () => {
         </Container>
       </Navbar>
 
-      <Switch>
-        <Route exact path={path}>
-          <WellCome></WellCome>
-        </Route>
-        <Route exact path={`${path}/myOrders`}>
-          <MyOrders></MyOrders>
-        </Route>
-
-        <Route exact path={`${path}/makePayment`}>
-          <MakePayment></MakePayment>
-        </Route>
-        <Route exact path={`${path}/addReview`}>
-          <AddReview></AddReview>
-        </Route>
-
-        <AdminRoute exact path={`${path}/makeAdmin`}>
-          <MakeAdmin></MakeAdmin>
-        </AdminRoute>
-
-        <AdminRoute exact path={`${path}/manageOrders`}>
-          <ManageOrder></ManageOrder>
-        </AdminRoute>
-        <AdminRoute exact path={`${path}/manageServices`}>
-          <ManageServices></ManageServices>
-        </AdminRoute>
-        <AdminRoute exact path={`${path}/addServices`}>
-          <AddServices></AddServices>
-        </AdminRoute>
-        <AdminRoute exact path={`${path}/manageReviews`}>
-          <ManageReview></ManageReview>
-        </AdminRoute>
-      </Switch>
+      <Outlet />
     </>
   );
 };
