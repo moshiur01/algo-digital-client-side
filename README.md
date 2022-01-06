@@ -19,6 +19,8 @@
 
 - Admin facility is added to maintain the website. In the Dashboard An Admin can make another admin, manage orders, manage services, add services, manage users reviews.
 
+- Admin can Upload picture for services.
+
 - All the data are used in the website like user details, services, orders, reviews are hosted in the Heroku server.
 - User can't go to some route without login or admin permission witch is developed by react router v6.
 - The website is responsive for Desktop and Mobile devices.
