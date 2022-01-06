@@ -1,22 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 
 const AddServices = () => {
+  const [imageData, setImageData] = useState(null);
   const { register, handleSubmit, reset } = useForm();
 
+  function encodeImageFileAsURL(target) {
+    const filePost = target;
+    const readerPost = new FileReader();
+    readerPost.onloadend = function () {
+      setImageData(readerPost.result);
+    };
+    readerPost.readAsDataURL(filePost);
+  }
+  // console.log(imageData);
+
   const onSubmit = (data) => {
+    const image = { img: imageData };
+
+    const finalData = { ...data, ...image };
     axios
-      .post("https://fathomless-falls-37027.herokuapp.com/services", data)
+      .post("https://fathomless-falls-37027.herokuapp.com/services", finalData)
       .then((res) => {
         if (res.data.insertedId) {
           alert("Successfully Added A New Service");
           reset();
         }
       });
-
-    // console.log(data);
+    // console.log(finalData);
   };
 
   return (
@@ -41,13 +54,16 @@ const AddServices = () => {
             <div className="col-md-6">
               <div className="form-group in_email">
                 <input
-                  type="name"
-                  name="name"
+                  type="file"
+                  name="img"
+                  placeholder="Upload Service Image"
                   className="form-control  m-2"
                   id="name"
-                  placeholder="Image Url"
                   required="required"
-                  {...register("img")}
+                  onChange={(e) => {
+                    encodeImageFileAsURL(e.target.files[0]);
+                  }}
+                  // {...register("img")}
                 />
               </div>
             </div>
