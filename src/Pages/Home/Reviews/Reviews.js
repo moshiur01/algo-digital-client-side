@@ -19,7 +19,7 @@ const Reviews = () => {
 
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("https://fathomless-falls-37027.herokuapp.com/reviews")
+    fetch("https://digital-service-server-moshiur01.vercel.app/reviews")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);

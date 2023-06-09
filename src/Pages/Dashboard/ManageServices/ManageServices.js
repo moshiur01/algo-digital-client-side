@@ -5,14 +5,14 @@ const ManageServices = () => {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    fetch("https://fathomless-falls-37027.herokuapp.com/services")
+    fetch("https://digital-service-server-moshiur01.vercel.app/services")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
 
   // delete
   const handleDelete = (id) => {
-    const url = `https://fathomless-falls-37027.herokuapp.com/services/${id}`;
+    const url = `https://digital-service-server-moshiur01.vercel.app/services/${id}`;
     fetch(url, {
       method: "DELETE",
     })

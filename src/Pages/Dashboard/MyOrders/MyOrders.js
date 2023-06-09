@@ -7,7 +7,7 @@ const MyOrders = () => {
   const [myOrders, setMyOrders] = useState([]);
 
   useEffect(() => {
-    fetch("https://fathomless-falls-37027.herokuapp.com/orders")
+    fetch("https://digital-service-server-moshiur01.vercel.app/orders")
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, []);
@@ -21,7 +21,7 @@ const MyOrders = () => {
   //   handle delete order by user
 
   const handleDelete = (id) => {
-    const url = `https://fathomless-falls-37027.herokuapp.com/orders/${id}`;
+    const url = `https://digital-service-server-moshiur01.vercel.app/orders/${id}`;
     fetch(url, {
       method: "DELETE",
     })

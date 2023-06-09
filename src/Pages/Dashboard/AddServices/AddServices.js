@@ -22,7 +22,7 @@ const AddServices = () => {
 
     const finalData = { ...data, ...image };
     axios
-      .post("https://fathomless-falls-37027.herokuapp.com/services", finalData)
+      .post("https://digital-service-server-moshiur01.vercel.app/services", finalData)
       .then((res) => {
         if (res.data.insertedId) {
           alert("Successfully Added A New Service");

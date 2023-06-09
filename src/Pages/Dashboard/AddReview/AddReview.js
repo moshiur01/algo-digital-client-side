@@ -15,7 +15,7 @@ const AddReview = () => {
     let finalData = { ...data, ...image };
 
     axios
-      .post("https://fathomless-falls-37027.herokuapp.com/reviews", finalData)
+      .post("https://digital-service-server-moshiur01.vercel.app/reviews", finalData)
       .then((res) => {
         if (res.data.insertedId) {
           alert("Thank You for Your Valuable Review");
@@ -23,7 +23,7 @@ const AddReview = () => {
         }
       });
 
-    console.log(finalData);
+    // console.log(finalData);
   };
 
   return (

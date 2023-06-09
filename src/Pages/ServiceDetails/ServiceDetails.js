@@ -23,7 +23,7 @@ const ServiceDetails = () => {
   const [serviceDetails, setServiceDetails] = useState([]);
 
   useEffect(() => {
-    fetch(`https://fathomless-falls-37027.herokuapp.com/services/${id}`)
+    fetch(`https://digital-service-server-moshiur01.vercel.app/services/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setService(data);
@@ -38,7 +38,7 @@ const ServiceDetails = () => {
     let final = { ...data, ...ser };
 
     axios
-      .post("https://fathomless-falls-37027.herokuapp.com/orders", final)
+      .post("https://digital-service-server-moshiur01.vercel.app/orders", final)
       .then((res) => {
         if (res.data.insertedId) {
           alert("Thank You for Choosing ALGO DIGITAL");

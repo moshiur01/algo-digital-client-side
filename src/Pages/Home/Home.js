@@ -13,7 +13,7 @@ const Home = () => {
   const [team, setTeam] = useState([]);
 
   useEffect(() => {
-    fetch("https://fathomless-falls-37027.herokuapp.com/team")
+    fetch("https://digital-service-server-moshiur01.vercel.app/team")
       .then((res) => res.json())
       .then((data) => setTeam(data));
   }, []);

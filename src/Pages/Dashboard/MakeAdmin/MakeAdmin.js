@@ -12,7 +12,7 @@ const MakeAdmin = () => {
     const confirm = window.confirm(`Do you want to Make ${email} as a Admin`);
     if (confirm) {
       const user = { email };
-      fetch("https://fathomless-falls-37027.herokuapp.com/users/admin", {
+      fetch("https://digital-service-server-moshiur01.vercel.app/users/admin", {
         method: "PUT",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(user),

@@ -16,7 +16,7 @@ const Services = () => {
 
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("https://fathomless-falls-37027.herokuapp.com/services")
+    fetch("https://digital-service-server-moshiur01.vercel.app/services")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);

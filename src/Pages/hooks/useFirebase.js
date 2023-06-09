@@ -119,7 +119,7 @@ const useFirebase = () => {
   // saved user function
   const saveUser = (email, displayName, method) => {
     const user = { email, displayName };
-    fetch("https://fathomless-falls-37027.herokuapp.com/users", {
+    fetch("https://digital-service-server-moshiur01.vercel.app/users", {
       method: method,
       headers: {
         "content-type": "application/json",
@@ -130,7 +130,7 @@ const useFirebase = () => {
 
   // admin data load
   useEffect(() => {
-    fetch(`https://fathomless-falls-37027.herokuapp.com/users/${user.email}`)
+    fetch(`https://digital-service-server-moshiur01.vercel.app/users/${user.email}`)
       .then((res) => res.json())
 
       .then((data) => setAdmin(data.admin));
